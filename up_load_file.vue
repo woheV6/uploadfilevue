@@ -27,6 +27,7 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   props: {
     up_load_url: {
@@ -78,7 +79,12 @@ export default {
           formData.append(key, this.other_data[key]);
         });
       }
-      this.$fecth.postFormDataNoSgin(this.up_load_url, formData).then(res => {
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      };
+      axios.post(this.up_load_url, formData, config).then(res => {
         console.log("上传成功");
         // close_upload_plug 回调函数
         this.$emit("close_upload_plug", { flage: true, success: true });
