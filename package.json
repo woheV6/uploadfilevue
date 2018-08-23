@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/woheV6/uploadfilevue/issues"
   },
-  "homepage": "https://github.com/woheV6/uploadfilevue#readme"
+  "homepage": "https://github.com/woheV6/uploadfilevue#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
